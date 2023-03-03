@@ -86,15 +86,9 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  arr.sort((a, b) => {
-    // Solution code here...
-    if (a < b)
-      return -1;
-    if (a > b)
-      return 1;
-    return 0;
+  return arr.sort();
+  // Solution code here...
 
-  });
 };
 
 /* ------------------------------------------------------------------------------------------------
