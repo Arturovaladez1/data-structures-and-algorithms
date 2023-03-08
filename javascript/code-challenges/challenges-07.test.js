@@ -25,7 +25,8 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
+  // sort the starswarpeople array by height from tallest to shortest
+  return starWarsArr.sort((a, b) => b.height - a.height);
 };
 // let sortedSWC = starWarsArr.
 /* ------------------------------------------------------------------------------------------------
@@ -34,12 +35,11 @@ CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index.
 ------------------------------------------------------------------------------------------------ */
 
-const removeThree = (idx, arr) => {
-  // Solution code here...
-  // let atRemoved = removeThree.
-  // console.log(idx);
-};
 
+const removeThree = (idx, arr) => {
+  arr.splice(idx, 3);
+  return arr;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -48,6 +48,11 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  const joinArray = (arr) =>
+    arr.join(' ');
+
+  return joinArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,9 +87,9 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = (arr) => arr.split('');
+// Solution code here...
+
 
 
 /* ------------------------------------------------------------------------------------------------
