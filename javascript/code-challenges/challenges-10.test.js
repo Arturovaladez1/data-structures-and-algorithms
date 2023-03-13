@@ -7,8 +7,11 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
+function returnTen(str) {
   // Solution code here...
+  let split = str.split('').reverse();
+
+  return split.splice(0, 10).reverse();
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,7 +30,10 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  let newArr = matrix.flat(100);
+  return Math.max(...newArr);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -45,6 +51,12 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let newArr = matrix.flat(100);
+  let result = 0;
+  for (let i in newArr) {
+    result += newArr[i];
+  }
+  return result;
 };
 
 
@@ -72,7 +84,18 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
+  let resultArr = [];
+  for (let i in hoursOpen) {
+    let result = 0;
+    for (let j in stores) {
 
+      result += stores[j][i];
+    }
+
+    resultArr.push(result);
+
+  }
+  return resultArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,6 +110,19 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  let arr = [];
+  data.forEach((no, idx) => {
+
+    arr.push(
+      {
+        sales: no + ' cookies',
+        time: hours[idx],
+      }
+    );
+  }
+
+  );
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,6 +148,16 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let ans = 0;
+  for (let i in arr) {
+    for (let j in arr) {
+      if (arr[i].items[j].name === 'Treats') {
+
+        ans = arr[i].items[j].quantity;
+      }
+    }
+  }
+  return ans;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -218,20 +264,20 @@ Run your tests from the console: jest challenge-12.test.js
 
 describe('Testing challenge 1', () => {
   test('it should return the last 10 characters of a string as an array', () => {
-    expect(returnTen('hello world')).toStrictEqual(['e','l','l','o',' ','w','o','r','l','d']);
-    expect(returnTen('world')).toStrictEqual(['w','o','r','l','d']);
+    expect(returnTen('hello world')).toStrictEqual(['e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']);
+    expect(returnTen('world')).toStrictEqual(['w', 'o', 'r', 'l', 'd']);
   });
 });
 
 describe('Testing challenge 2', () => {
   test('It should return the max value', () => {
-    expect(findMax([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(24);
+    expect(findMax([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(24);
   });
 });
 
 describe('Testing challenge 3', () => {
   test('It should return the total sum', () => {
-    expect(totalSum([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(81);
+    expect(totalSum([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(81);
     expect(totalSum([])).toStrictEqual(0);
   });
 });
@@ -323,3 +369,4 @@ xdescribe('Testing challenge 11', () => {
     expect(result[2]).toStrictEqual(27);
   });
 });
+
