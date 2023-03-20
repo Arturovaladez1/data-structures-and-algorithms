@@ -12,8 +12,10 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-  const regex = /^(Mr\.|Mrs\.|Ms\.|Dr\.)\s[a-zA-Z\s]+$/;
-  return arr.filter(str => regex.test(str));
+  let a = arr.filter(i =>
+    (/^(Mr. |Mrs. |Ms. |Dr. )\w/gm).test(i)
+  );
+  return a;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,6 +28,9 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  return arr.map(i => {
+    return i.charAt(0).toUpperCase() + i.slice(1);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,6 +106,17 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let person = arr.find(i => i.name === 'Luke Skywalker');
+  return arr
+    .filter(i => parseInt(i.mass) > parseInt(person.mass))
+    .reduce(
+      (str, currentCha, i, arr) => {
+        i === arr.length - 1
+          ? str += currentCha.name
+          : str += currentCha.name + ' - ';
+        return str;
+      }, ''
+    );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,6 +135,19 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  return arr.sort(
+    (a, b) => {
+      let aValue = a[property];
+      let bValue = b[property];
+      if (aValue < bValue) {
+        return -1;
+      } else if (aValue > bValue) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,6 +164,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  return (/^https:\/\//gm).test(url);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,6 +189,21 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  let helpCheck = (set) => {
+    return set.every(cell => cell != '' && cell === set[0]) ? true : false;
+  };
+
+  if (helpCheck(board[0])) return true;
+  if (helpCheck(board[1])) return true;
+  if (helpCheck(board[2])) return true;
+
+  if (helpCheck([board[0][0], board[1][0], board[2][0]])) return true;
+  if (helpCheck([board[0][1], board[1][1], board[2][1]])) return true;
+  if (helpCheck([board[0][2], board[1][2], board[2][2]])) return true;
+
+  if (helpCheck([board[0][0], board[1][1], board[2][2]])) return true;
+  if (helpCheck([board[0][12], board[1][1], board[2][0]])) return true;
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
