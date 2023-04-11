@@ -22,4 +22,5 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-[White Board Code Challange](/javascript/README.md)
+[White Board Code Challange1](/javascript/code-challenges/Array-Reverse/README.MD)
+[White Board Code Challenge2](/javascript/code-challenges/Array-insert-shift/README.MD)
