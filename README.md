@@ -24,3 +24,4 @@ To run your tests
 
 [White Board Code Challange1](/javascript/code-challenges/Array-Reverse/README.MD)
 [White Board Code Challenge2](/javascript/code-challenges/Array-insert-shift/README.MD)
+[White Board Code Challenge3](/javascript/code-challenges/Array-binary-switch/README.MD)
