@@ -8,4 +8,5 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 NOTE: The search algorithm used in your function should be a binary search.
 Check the Resources section for details
 
+
 [Array Binary Search](/javascript/code-challenges/Array-binary-switch/whiteboard3.png)
