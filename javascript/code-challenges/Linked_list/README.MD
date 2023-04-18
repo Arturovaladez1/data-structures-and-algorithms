@@ -2,6 +2,13 @@
 
 ## White Boards
 
-## Whiteboard Challange #2
+## Whiteboard Challange #5
 
-[WhiteBoardChallange2](/javascript/code-challenges/Array-Reverse/WhiteBoard1.png)
+Problem Domain:
+
+- Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
+
+- Create a Linked List class
+
+- Within your Linked List class, include a head property.
+
