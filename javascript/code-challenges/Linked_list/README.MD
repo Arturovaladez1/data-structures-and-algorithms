@@ -2,6 +2,6 @@
 
 ## White Boards
 
-## Whiteboard Challange #2
+## Whiteboard Challange #6
 
-[WhiteBoardChallange2](/javascript/code-challenges/Array-Reverse/WhiteBoard1.png)
+[WhiteBoardChallange6](/javascript/code-challenges/Linked-list-insertions/)
